@@ -6,6 +6,10 @@ ______________________________________________
                By Jordan Hillis
            contact@jordanhillis.com
            https://jordanhillis.com
+
+Contributors:
+ - @Rhyven         (2020-05)
+ - @PeterDaveHello (2019-08)
 ______________________________________________
 
 MIT License
@@ -40,7 +44,7 @@ current_kernel=$(uname -r)
 program_name="pvekclean"
 
 # Version
-version="1.2"
+version="1.3"
 
 # Check if force removal argument is added
 if [ "$1" == "-f" ] || [ "$1" == "--force" ]; then
