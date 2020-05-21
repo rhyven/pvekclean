@@ -252,7 +252,7 @@ function uninstall_program() {
 # PVE Kernel Clean main function
 function pve_kernel_clean() {
 	# Find all the PVE kernels on the system
-	kernels=$(dpkg --list| awk '/pve-kernel-.*-pve/ {print $2}' | sort -V)
+	kernels=$(dpkg --list| awk '/pve-kernel-.*-pve/ {print $2}' | sort -V | head -n -2)
 	# List of kernels that will be removed (adds them as the script goes on)
 	kernels_to_remove=""
 	# Check the /boot used
