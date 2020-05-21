@@ -44,7 +44,7 @@ current_kernel=$(uname -r)
 program_name="pvekclean"
 
 # Version
-version="1.3"
+version="1.4"
 
 # Check if force removal argument is added
 if [ "$1" == "-f" ] || [ "$1" == "--force" ]; then
@@ -85,7 +85,7 @@ ___________________________________________
 # Show current system information
 function kernel_info() {
 	# Lastest kernel installed
-	latest_kernel=$(dpkg --list| awk '/pve-kernel-.*-pve/ {print $2}' | tac | head -n 1)
+	latest_kernel=$(dpkg --list| awk '/pve-kernel-.*-pve/ {print $2}' | tail -n1)
 	# Show operating system used
 	printf "OS: $(grep "PRETTY_NAME" /etc/os-release | sed -e 's/PRETTY_NAME=//g' -e 's/["]//g' | awk '{print $0}')\n"
 	# Get information about the /boot folder
